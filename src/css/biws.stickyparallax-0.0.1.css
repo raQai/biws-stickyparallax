@@ -1,0 +1,31 @@
+.sticky-parallax-container {
+    position: relative;
+}
+
+.sticky-parallax-lockup {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sticky-parallax-block {
+    width:100%;
+    position: absolute;
+    pointer-events: none;
+}
+
+.sticky-block-active {
+    pointer-events: all;
+}
+
+.sticky-block-next {
+}
+
+.sticky-block-will-change {
+    will-change: transfor, opacity;
+}

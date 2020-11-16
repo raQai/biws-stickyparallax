@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky parallax example page</title>
+    <link rel="stylesheet" href="src/css/biws.stickyparallax-0.0.1.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100%;
+    }
+
+    .start,
+    .end {
+        height: 100vh;
+        background: red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body>
+    <a href="start" aria-label="start of page"></a>
+    <div class="start">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, ut!</p>
+    </div>
+    <div class="sticky-parallax">
+        <section>
+            <h2>1. Lorem, ipsum dolor.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam natus laudantium debitis quos quisquam
+                aliquid cumque earum, officiis vel pariatur sint voluptatum architecto animi ab.</p>
+        </section>
+        <section>
+            <h2>2. Lorem ipsum dolor sit.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, provident.</p>
+        </section>
+        <section>
+            <h2>3. Lorem, ipsum.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consectetur culpa voluptatibus, quae
+                porro itaque accusantium optio molestiae odio, vero facilis sapiente cumque.</p>
+        </section>
+    </div>
+    <div class="end">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, veritatis porro recusandae facere
+            minima officiis corporis. Tempora mollitia asperiores aliquam unde, quam rem nesciunt, animi, deserunt iure
+            voluptate ipsa ducimus qui eum. Saepe, ea perspiciatis.</p>
+    </div>
+    <a href="end" aria-label="end of page"></a>
+    <div class="end">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quisquam voluptates ullam tempora id? Itaque
+            commodi officia dolore molestiae corporis tempore quaerat! Vitae veritatis totam dolorem nam hic aperiam
+            reiciendis officiis nulla sed cumque quos pariatur ipsam nesciunt fuga blanditiis suscipit perspiciatis
+            distinctio, iusto unde libero odio magnam, illum quod.</p>
+    </div>
+    <script src="src/js/biws.stickyparallax-0.0.1.js" defer></script>
+    <script>
+        biws.stickyParallax({ containerSelector: ".sticky-parallax" });
+    </script>
+</body>
+
+</html>
