@@ -66,7 +66,9 @@
     </div>
     <script src="src/js/biws.stickyparallax-0.0.1.js" defer></script>
     <script>
-        biws.stickyParallax({ containerSelector: ".sticky-parallax" });
+        document.addEventListener('DOMContentLoaded', () => {
+            biws.stickyParallax({ containerSelector: ".sticky-parallax" });
+        });
     </script>
 </body>
 
