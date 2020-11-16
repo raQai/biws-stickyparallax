@@ -1,3 +1,10 @@
+/**
+ * BIWS StickyParallax
+ *
+ * Copyright Patrick Bogdan. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+
 ; (function (biws) {
     biws.stickyParallax = ({
         containerSelector,
