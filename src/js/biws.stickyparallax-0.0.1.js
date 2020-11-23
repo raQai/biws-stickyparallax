@@ -110,13 +110,12 @@
 
                 return child.classList.contains(className);
             },
-            wrapContent = (element, className, windowHeight) => {
+            wrapContent = (element, className) => {
                 if (isContentWrapped(element, className)) {
                     return;
                 }
                 const wrapper = document.createElement('div');
                 wrapper.classList.add(className);
-                wrapper.style.height = windowHeight;
                 wrapper.append(...element.children);
                 element.append(wrapper);
             },
@@ -291,7 +290,7 @@
                 activeIndexes[containerIndex] = settings.active;
                 nextIndexes[containerIndex] = settings.next;
             },
-            makeStickyParallax = (element, windowHeight) => {
+            makeStickyParallax = (element) => {
                 const childCount = element.children.length;
                 if (!childCount) {
                     console.error('Element does hot have children for sticky parallax effect', element)
@@ -299,7 +298,7 @@
                 }
 
                 element.classList.add(css.container);
-                element.style.height = `${windowHeight * (childCount + 1)}px`;
+                element.style.height = `${100 * (childCount + 1)}vh`;
                 element.style.paddingTop = 0;
                 element.style.paddingBottom = 0;
                 element.style.marginTop = 0;
@@ -319,7 +318,7 @@
                 if (isContentWrapped(element, css.lockup)) {
                     return;
                 }
-                wrapContent(element, css.lockup, windowHeight);
+                wrapContent(element, css.lockup);
             },
             unmakeStickyParallax = (element) => {
                 element.classList.remove(css.container);
@@ -349,7 +348,7 @@
             getBlocks = (container) => {
                 return container.querySelectorAll(`.${css.lockup} .${css.block}`);
             },
-            init = (containers, windowHeight) => {
+            init = (containers) => {
                 activeContainerIndexes = [];
 
                 const validContainers = [];
@@ -361,7 +360,7 @@
                         continue;
                     }
 
-                    makeStickyParallax(container, windowHeight);
+                    makeStickyParallax(container);
 
                     validContainers.push(container);
 
@@ -391,12 +390,12 @@
                 tick = true;
                 windowHeight = window.innerHeight || document.documentElement.clientHeight;
                 window.requestAnimationFrame(() => {
-                    validContainers = init(containers, windowHeight);
+                    validContainers = init(containers);
                     tick = false;
                 });
             };
 
-        validContainers = init(containers, windowHeight);
+        validContainers = init(containers);
 
         window.addEventListener('resize', handleResize);
 
